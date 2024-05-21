@@ -23,14 +23,13 @@ setTimeout(function () {
     const wrongNumber = []
     while ((rightNumber.length + wrongNumber.length) < 5) {
         const userNumber = Number.parseInt(prompt('whats the number displayed?'), 10)
-        if (!(blacklistUser.includes(userNumber)) && (blacklistComputer.includes(userNumber))) {
+        // se il numero utente è presente in right number o wrong number, non fai niente
+        if ((rightNumber.includes(userNumber) || wrongNumber.includes(userNumber))) {
+            alert('You have already entered this number.');
+        } else if (rightNumber.includes(userNumber) === false && wrongNumber.includes(userNumber) === false && (blacklistComputer.includes(userNumber))) {
             rightNumber.push(userNumber)
-
-        } else if (blacklistUser.includes(userNumber)) {
-
         } else {
             wrongNumber.push(userNumber)
-
         }
     }
 
