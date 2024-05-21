@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #A37B73;
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    background-color: #DBBEA1;
+    height: calc(100vh - 115.2px - 52.6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    padding: 1rem;
+    background-color: #DB7F67;
+}
+
+main>* {
+    font-size: 14rem;
+}
