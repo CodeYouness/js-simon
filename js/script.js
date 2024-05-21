@@ -4,11 +4,13 @@
 const numbersContainer = document.querySelector('main')
 let blacklist = []
 
-for (let i = 0; i < 5; i++) {
+while (blacklist.length < 5) {
     let numberEl = document.createElement('p')
     const casualNumber = Math.floor(Math.random() * 100)
-    if (!blacklist.includes(casualNumber)) {
+    if (blacklist.includes(casualNumber) === false) {
         numberEl.textContent = casualNumber
         numbersContainer.appendChild(numberEl)
+        blacklist.push(casualNumber)
     }
+    console.log(casualNumber)
 }
