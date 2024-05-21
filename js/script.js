@@ -14,16 +14,27 @@ while (blacklistComputer.length < 5) {
 }
 
 numberEl.textContent = blacklistComputer.join('-')
-numbersContainer.append(numberEl)
+numbersContainer.appendChild(numberEl)
 
 
 setTimeout(function () {
-    const rightNumber = []
     numbersContainer.innerHTML = ''
-    while (blacklistUser.length < 5) {
+    const rightNumber = []
+    const wrongNumber = []
+    while ((rightNumber.length + wrongNumber.length) < 5) {
         const userNumber = Number.parseInt(prompt('whats the number displayed?'), 10)
-        if (true) {
+        if (!(blacklistUser.includes(userNumber)) && (blacklistComputer.includes(userNumber))) {
+            rightNumber.push(userNumber)
+
+        } else if (blacklistUser.includes(userNumber)) {
+
+        } else {
+            wrongNumber.push(userNumber)
 
         }
     }
+
+    alert(`right number: ${rightNumber.length} with: ${rightNumber}, the computer number was: ${blacklistComputer}`)
+
+
 }, 3000)
