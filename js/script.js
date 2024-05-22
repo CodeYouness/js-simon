@@ -28,8 +28,8 @@ setTimeout(function () {
         while ((rightNumber.length + wrongNumber.length) < 5) {
             const userNumber = Number.parseInt(prompt('What\'s the number displayed?'), 10)
             // se il numero utente è presente in right number o wrong number, non fai niente
-            if ((rightNumber.includes(userNumber) || wrongNumber.includes(userNumber))) {
-                alert('You have already entered this number.');
+            if ((rightNumber.includes(userNumber) || wrongNumber.includes(userNumber) || isNaN(userNumber))) {
+                alert('Please enter a valid number.');
             } else if (!rightNumber.includes(userNumber) && !wrongNumber.includes(userNumber) && blacklistComputer.includes(userNumber)) {
                 rightNumber.push(userNumber)
             } else {
